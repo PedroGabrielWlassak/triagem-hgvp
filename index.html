@@ -56,8 +56,8 @@
 
   .version-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-top: 36px;
   }
 
@@ -144,6 +144,7 @@
 
   .vcard.v1 { --accent: #475569; --accent-2: #64748b; --shadow: rgba(71,85,105,.5); }
   .vcard.v2 { --accent: #1976d2; --accent-2: #0ea5e9; --shadow: rgba(25,118,210,.45); }
+  .vcard.v3 { --accent: #b45309; --accent-2: #f59e0b; --shadow: rgba(245,158,11,.45); }
 
   .vcard.featured::after {
     content: "Recomendada";
@@ -210,7 +211,24 @@
     font-weight: 600; cursor: pointer; font-family: inherit;
   }
 
-  @media (max-width: 720px) {
+  .vcard.new::after {
+    content: "Novo";
+    position: absolute;
+    top: 16px; right: 16px;
+    background: linear-gradient(135deg, #b45309, #f59e0b);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 980px) {
+    .version-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
     .version-grid { grid-template-columns: 1fr; gap: 18px; }
     header.intro h1 { font-size: 24px; }
     .vcard { padding: 24px 20px; }
@@ -276,9 +294,24 @@
         <li>Alertas em sinais vitais fora do normal</li>
         <li>Sugestão automática de classificação de risco</li>
         <li>Autocomplete em medicamentos</li>
-        <li>Atalhos de teclado (1-5 para cores)</li>
+        <li>Atalhos de teclado</li>
       </ul>
       <span class="cta">Acessar v2
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+    <a href="v3/" class="vcard v3 new">
+      <span class="vtag">v3</span>
+      <h2>Versão sem Laranja</h2>
+      <p class="lead">Igual à v2, mas sem a classificação Laranja. Casos antes triados como Laranja agora vão direto para Vermelho (atendimento imediato).</p>
+      <ul>
+        <li>Apenas 4 cores: Vermelho, Amarelo, Verde, Azul</li>
+        <li>Vermelho absorve casos "muito urgentes"</li>
+        <li>Todas as features da v2 mantidas</li>
+        <li>Atalhos atualizados (1 a 4)</li>
+      </ul>
+      <span class="cta">Acessar v3
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </span>
     </a>

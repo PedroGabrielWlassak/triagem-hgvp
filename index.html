@@ -56,7 +56,7 @@
 
   .version-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 36px;
   }
@@ -145,6 +145,7 @@
   .vcard.v1 { --accent: #475569; --accent-2: #64748b; --shadow: rgba(71,85,105,.5); }
   .vcard.v2 { --accent: #1976d2; --accent-2: #0ea5e9; --shadow: rgba(25,118,210,.45); }
   .vcard.v3 { --accent: #b45309; --accent-2: #f59e0b; --shadow: rgba(245,158,11,.45); }
+  .vcard.v4 { --accent: #16a34a; --accent-2: #22c55e; --shadow: rgba(22,163,74,.45); }
 
   .vcard.featured::after {
     content: "Recomendada";
@@ -215,7 +216,7 @@
     content: "Novo";
     position: absolute;
     top: 16px; right: 16px;
-    background: linear-gradient(135deg, #b45309, #f59e0b);
+    background: linear-gradient(135deg, var(--accent, #b45309), var(--accent-2, #f59e0b));
     color: #fff;
     font-size: 10px;
     font-weight: 700;
@@ -225,9 +226,6 @@
     text-transform: uppercase;
   }
 
-  @media (max-width: 980px) {
-    .version-grid { grid-template-columns: repeat(2, 1fr); }
-  }
   @media (max-width: 640px) {
     .version-grid { grid-template-columns: 1fr; gap: 18px; }
     header.intro h1 { font-size: 24px; }
@@ -283,7 +281,7 @@
       </span>
     </a>
 
-    <a href="v2/" class="vcard v2 featured">
+    <a href="v2/" class="vcard v2">
       <span class="vtag">v2</span>
       <h2>Versão estendida</h2>
       <p class="lead">Tudo da v1, com persistência local e ferramentas para preencher mais rápido com mais segurança.</p>
@@ -301,7 +299,7 @@
       </span>
     </a>
 
-    <a href="v3/" class="vcard v3 new">
+    <a href="v3/" class="vcard v3">
       <span class="vtag">v3</span>
       <h2>Versão sem Laranja</h2>
       <p class="lead">Igual à v2, mas sem a classificação Laranja. Casos antes triados como Laranja agora vão direto para Vermelho (atendimento imediato).</p>
@@ -312,6 +310,23 @@
         <li>Atalhos atualizados (1 a 4)</li>
       </ul>
       <span class="cta">Acessar v3
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+    <a href="v4/" class="vcard v4 new">
+      <span class="vtag">v4</span>
+      <h2>Motor clínico aprimorado</h2>
+      <p class="lead">Tudo da v3 + thresholds clínicos mais finos, glicemia avaliada, PAM calculada e alertas de padrões (sepse, choque, IRpA, emergência hipertensiva).</p>
+      <ul>
+        <li>Limites inclusivos (PA, FC, FR, Temp, SatO₂)</li>
+        <li>Glicemia com warning / danger</li>
+        <li>PAM calculada automaticamente</li>
+        <li>Lacunas preenchidas (FR 9-11, Temp 35-35.9 e 37.5-37.9, PA dia 100-120)</li>
+        <li>Detecção de SIRS (sepse), choque, insuf. respiratória</li>
+        <li>71 testes automatizados passando</li>
+      </ul>
+      <span class="cta">Acessar v4
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </span>
     </a>
